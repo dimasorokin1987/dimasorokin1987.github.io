@@ -1,6 +1,6 @@
 section.examples {
  float: right;
- width: 30%;
+ width: 40%;
 }
 
 .clear.float{
@@ -14,10 +14,15 @@ ul.projects {
 
 ul.projects li {
  padding: 25px;
+ text-align: center;
+ border: 1px dashed grey;
+ margin: 5px;
+ background: lightgrey; 
 }
 
 ul.projects li a {
  font-size: xx-large;
+ text-decoration: none;
 }
 
 ul.projects li:hover {
@@ -36,6 +41,7 @@ ul.socials li {
 
 ul.socials li a {
  font-size: large;
+ text-decoration: none;
 }
 
 ul.socials li:hover {
