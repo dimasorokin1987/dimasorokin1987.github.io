@@ -1,1 +1,43 @@
+section.examples {
+ float: right;
+ width: 30%;
+}
 
+.clear.float{
+ clear: both;
+}
+
+ul.projects {
+ list-style-type: none;
+ padding: 0;
+}
+
+ul.projects li {
+ padding: 25px;
+}
+
+ul.projects li a {
+ font-size: xx-large;
+}
+
+ul.projects li:hover {
+ background: rgba(0,100,0,0.5);
+}
+
+ul.socials {
+ list-style-type: none;
+ padding: 0;
+}
+
+ul.socials li {
+ padding: 10px;
+ display: inline;
+}
+
+ul.socials li a {
+ font-size: large;
+}
+
+            ul.socials li:hover {
+                background: rgba(0,30,100,0.5);
+            }
