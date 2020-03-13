@@ -2,13 +2,30 @@ body {
 	font-size: 16px;
 }
 
-.theme.switcher {
+.switchers {
   float: right;
+}
+
+.switcher {
+  display: inline-block;
+	margin: 2px;
+	padding: 5px;
+}
+.switcher b {
+  padding: 5px 0;
+}
+.switcher label {
+  padding: 2px 8px;
+  margin: 0 3px;
 }
 
 section.examples {
 	float: right;
 	width: 50%;
+}
+
+section.examples h2 {
+  text-align: center;
 }
 
 .clear.float {

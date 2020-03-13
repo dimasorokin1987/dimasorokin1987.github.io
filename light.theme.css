@@ -3,8 +3,20 @@ body.light_theme {
   color: #000;
 }
 
-body.light_theme ul.projects li {
+body.light_theme .switcher {
+  background: rgb(190, 200, 200);
+}
+
+body.light_theme .switcher label {
+  background: #dee0e0;
+}
+
+body.light_theme section.examples {
   background: #bbb;
+}
+
+body.light_theme ul.projects li {
+  background: #ccc;
   border-color: #888;
   color: #000;
 }
