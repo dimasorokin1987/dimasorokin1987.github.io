@@ -43,11 +43,11 @@
       </div>
     </div>
     <div class="clear float"></div>
-    <h1>Hello, I am Dima Sorokin. And this is my portfolio.</h1>
+    <h1 id="about"></h1>
   </header>
   <main>
     <section class="examples">
-      <h2>Some of my projects</h2>
+      <h2 id="projects_header"></h2>
       <ul class="projects">
         <li>
           <a href="/react-dashboard/">react-dashboard</a>
@@ -72,6 +72,7 @@
   <script>
     const body = document.querySelector('body');
     const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]')
+    const localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]')
 
     const applyTheme = theme => {
       let currentTheme = [...body.classList].find(cl=>cl.endsWith('_theme'));
@@ -80,6 +81,27 @@
       }else{
         body.classList.add(theme);
       }
+    };
+
+    const texts = {
+      en_locale: {
+        about: 'Hello, I am Dima Sorokin. And this is my portfolio.',
+        projects_header: 'Some of my projects:'
+      },
+      ru_locale: {
+        about: 'Привет, я Дима Сорокин. И это мое портфолио.',
+        projects_header: 'Некоторые из моих проектов:'
+      },
+      ua_locale: {
+        about: 'Привіт, я Діма Сорокін. І це моє портфоліо.',
+        projects_header: 'Деякі з моїх проектів:'
+      },
+    };
+
+    const updateTexts = lang => {
+      Object.entries(texts[lang]).forEach(([id,text]) => {
+        document.getElementById(id).innerHTML = text;
+      });
     };
 
     themeRadioButtons.forEach(themeRadioButton=>{
@@ -91,15 +113,32 @@
       }, false);
     });
 
+    localeRadioButtons.forEach(btn=>{
+      btn.addEventListener('change', e=>{
+        let locale = e.target.value;
+        console.log(locale);
+        localStorage.storedLocale = locale;
+        updateTexts(locale);
+      }, false);
+    });
+
     const changeTheme = theme => {
       themeRadioButtons.forEach(btn=>{
         if(btn.value === theme) btn.click();
       });
     };
+    const changeLocale = locale => {
+      localeRadioButtons.forEach(btn=>{
+        if(btn.value === locale) btn.click();
+      });
+    };
 
     //applyTheme('light_theme');
     let storedTheme = localStorage.storedTheme || 'light_theme';
+    let storedLocale = localStorage.storedLocale || 'en_locale';
+   
     changeTheme(storedTheme);
+    changeLocale(storedLocale);
   </script>
 </body>
 </html>
