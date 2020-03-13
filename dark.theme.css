@@ -1,0 +1,25 @@
+body.dark_theme {
+  background: #333;
+  color: #ccc;
+}
+
+body.dark_theme ul.projects li {
+  background: #555;
+  color: #ccc;
+}
+
+body.dark_theme ul.projects li:hover {
+  background: rgba(150, 100, 100, 0.5);
+}
+
+body.dark_theme ul.projects li a {
+  color: #ffc;
+}
+
+body.dark_theme ul.socials li:hover {
+	background: rgba(100, 130, 100, 0.5);
+}
+
+body.dark_theme ul.socials li a {
+	color: #ffc;
+}

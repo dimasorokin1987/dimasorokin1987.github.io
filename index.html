@@ -1,52 +1,88 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <title>Portfolio.</title>
-        <link
-         rel="stylesheet"
-         media="screen and (min-width: 900px)"
-         href="widescreen.css"
-        />
-        <link
-        rel="stylesheet"
-        media="screen and (max-width: 900px) and (min-width: 600px)"
-        href="mediumscreen.css"
-       />
-        <link
-         rel="stylesheet"
-         media="screen and (max-width: 600px)"
-         href="smallscreen.css"
-        />
-    </head>
-    <body>
-        <header>
-            Hello, I am Dima Sorokin. And this is my portfolio.
-        </header>
-        <main>
-            <section class="examples">
-                <h2>Some of my projects</h2>
-                <ul class="projects">
-                    <li>
-                        <a href="/react-dashboard/">react-dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">mern-url-shortener</a>
-                    </li>
-                </ul>
-            </section>
-            <div class="clear float"></div>
-        </main>
-        <footer>
-            <ul class="socials">
-                <li>
-                    <a href="https://www.facebook.com/profile.php?id=100008725081649">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/dima-sorokin-016bbbaa/">LinkedIn</a>
-                </li>
-            </ul>
-        </footer>
-    </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  <title>Portfolio.</title>
+  <link rel="stylesheet" media="screen and (min-width: 900px)" href="wide.screensize.css" />
+  <link rel="stylesheet" media="screen and (max-width: 900px) and (min-width: 600px)" href="medium.screensize.css" />
+  <link rel="stylesheet" media="screen and (max-width: 600px)" href="small.screensize.css" />
+  <link rel="stylesheet" href="light.theme.css" />
+  <link rel="stylesheet" href="dark.theme.css" />
+</head>
+
+<body>
+  <header>
+    <div class='theme switcher'>
+      <b>theme:</b>
+      <label>
+        <input type="radio" name="themeRadioButton" value="light_theme">
+        <span>light</span>
+      </label>
+      <label>
+        <input type="radio" name="themeRadioButton" value="dark_theme">
+        <span>dark</span>
+      </label>
+    </div>
+    <div class="clear float"></div>
+    <h1>Hello, I am Dima Sorokin. And this is my portfolio.</h1>
+  </header>
+  <main>
+    <section class="examples">
+      <h2>Some of my projects</h2>
+      <ul class="projects">
+        <li>
+          <a href="/react-dashboard/">react-dashboard</a>
+        </li>
+        <li>
+          <a href="#">mern-url-shortener</a>
+        </li>
+      </ul>
+    </section>
+    <div class="clear float"></div>
+  </main>
+  <footer>
+    <ul class="socials">
+      <li>
+        <a href="https://www.facebook.com/profile.php?id=100008725081649">Facebook</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/dima-sorokin-016bbbaa/">LinkedIn</a>
+      </li>
+    </ul>
+  </footer>
+  <script>
+    const body = document.querySelector('body');
+    const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]')
+
+    const applyTheme = theme => {
+      let currentTheme = [...body.classList].find(cl=>cl.endsWith('_theme'));
+      if(currentTheme){
+        body.classList.replace(currentTheme, theme);
+      }else{
+        body.classList.add(theme);
+      }
+    };
+
+    themeRadioButtons.forEach(themeRadioButton=>{
+      themeRadioButton.addEventListener('change', e=>{
+        let theme = e.target.value;
+        console.log(theme);
+        localStorage.storedTheme = theme;
+        applyTheme(theme);
+      }, false);
+    });
+
+    const changeTheme = theme => {
+      themeRadioButtons.forEach(btn=>{
+        if(btn.value === theme) btn.click();
+      });
+    };
+
+    //applyTheme('light_theme');
+    let storedTheme = localStorage.storedTheme || 'light_theme';
+    changeTheme(storedTheme);
+  </script>
+</body>
 </html>

@@ -1,0 +1,25 @@
+body.light_theme {
+  background: #aaa;
+  color: #000;
+}
+
+body.light_theme ul.projects li {
+  background: #bbb;
+  color: #000;
+}
+
+body.light_theme ul.projects li:hover {
+  background: rgba(0, 100, 0, 0.1);
+}
+
+body.light_theme ul.projects li a {
+  color: #33a;
+}
+
+body.light_theme ul.socials li:hover {
+	background: rgba(0, 30, 100, 0.1);
+}
+
+body.light_theme ul.socials li a {
+	color: #33f;
+}

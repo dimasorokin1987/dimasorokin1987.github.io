@@ -1,0 +1,57 @@
+body {
+	font-size: 16px;
+}
+
+.theme.switcher {
+  float: right;
+}
+
+section.examples {
+	float: right;
+	width: 50%;
+}
+
+.clear.float {
+	clear: both;
+}
+
+ul.projects {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul.projects li {
+	padding: 20px;
+	text-align: center;
+	border: 1px dashed grey;
+	margin: 5px;
+	background: lightgrey;
+}
+
+ul.projects li a {
+	font-size: xx-large;
+	text-decoration: none;
+}
+
+ul.projects li:hover {
+	background: rgba(0, 100, 0, 0.5);
+}
+
+ul.socials {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul.socials li {
+	padding: 15px;
+	display: inline;
+}
+
+ul.socials li a {
+	font-size: large;
+	text-decoration: none;
+}
+
+ul.socials li:hover {
+	background: rgba(0, 30, 100, 0.5);
+}
