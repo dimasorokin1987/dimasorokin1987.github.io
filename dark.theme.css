@@ -5,6 +5,7 @@ body.dark_theme {
 
 body.dark_theme ul.projects li {
   background: #555;
+  border-color: #000;
   color: #ccc;
 }
 

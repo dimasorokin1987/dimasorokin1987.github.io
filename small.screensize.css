@@ -30,18 +30,14 @@ ul.projects {
 
 ul.projects li {
   padding: 20px;
-  border: 1px dashed grey;
+  border-width: 1px;
+  border-style: dashed;
   margin: 5px;
-  background: lightgrey;
 }
 
 ul.projects li a {
   font-size: xx-large;
   text-decoration: none;
-}
-
-ul.projects li:hover {
-  background: rgba(0, 100, 0, 0.5);
 }
 
 ul.socials {
@@ -58,8 +54,4 @@ ul.socials li {
 ul.socials li a {
   font-size: x-large;
   text-decoration: none;
-}
-
-ul.socials li:hover {
-  background: rgba(0, 30, 100, 0.5);
 }

@@ -5,6 +5,7 @@ body.light_theme {
 
 body.light_theme ul.projects li {
   background: #bbb;
+  border-color: #888;
   color: #000;
 }
 
