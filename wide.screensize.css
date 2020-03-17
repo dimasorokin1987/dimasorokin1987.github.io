@@ -32,11 +32,6 @@ section#projects h2 {
   text-align: center;
 }
 
-section#projects ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 section#projects li {
   padding: 20px;
   text-align: center;
@@ -50,48 +45,24 @@ section#projects li a {
   text-decoration: none;
 }
 
-section#skills ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 section#skills li {
   display: inline-block;
-  padding: 20px;
+  padding: 5px;
   margin: 5px;
 }
 
-section#skills img {
-  width: 36px;
-  height: 36px;
-}
-
-section#contacts ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 section#contacts li {
-  padding: 10px;
-  display: inline-block;
+  transition: transform .1s;
 }
 
-section#socials ul {
-  list-style-type: none;
-  padding: 0;
+section#contacts li:hover {
+  transform: scale(1.5);
 }
 
 section#socials li {
-  padding: 10px;
-  display: inline-block;
   transition: transform .1s;
 }
 
 section#socials li:hover {
   transform: scale(1.5);
-}
-
-section#socials li a {
-  font-size: large;
-  text-decoration: none;
 }

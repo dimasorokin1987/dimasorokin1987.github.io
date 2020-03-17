@@ -57,11 +57,6 @@ section#projects {
   width: 100%;
 }
 
-section#projects ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 section#projects li {
   padding: 20px;
   border-width: 1px;
@@ -74,43 +69,8 @@ section#projects li a {
   text-decoration: none;
 }
 
-section#skills ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 section#skills li {
   display: inline-block;
   padding: 20px;
   margin: 5px;
-}
-
-section#skills img {
-  width: 36px;
-  height: 36px;
-}
-
-section#contacts ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-section#contacts li {
-  padding: 10px;
-  display: inline-block;
-}
-
-section#socials ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-section#socials li {
-  padding: 20px;
-  display: inline-block;
-}
-
-section#socials li a {
-  font-size: x-large;
-  text-decoration: none;
 }

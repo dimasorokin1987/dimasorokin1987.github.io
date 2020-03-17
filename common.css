@@ -6,9 +6,6 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
-  padding: 5px;
 }
 
 .facebook.letter.icon {
@@ -24,6 +21,75 @@
 }
 
 .js.letter.icon {
-  font-size: 32px;
+  font-size: 48px;
   font-family: sans-serif;
+}
+
+section#projects ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section#skills ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+section#skills .icon {
+  width: 52px;
+  height: 52px;
+  padding: 5px;
+}
+
+section#contacts .header {
+  display: inline;
+}
+
+section#contacts ul {
+  display: inline;
+  list-style-type: none;
+  padding: 0;
+}
+
+section#contacts li {
+  display: inline-block;
+  padding: 10px;
+}
+
+section#contacts li a {
+  display: inline-flex;
+  font-size: large;
+  text-decoration: none;
+}
+
+section#contacts .icon {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
+section#contacts .text {
+  font-size: 20px;
+}
+
+section#socials ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section#socials li {
+  padding: 10px;
+  display: inline-block;
+}
+
+section#socials li a {
+  font-size: large;
+  text-decoration: none;
+}
+
+section#socials .icon {
+  width: 36px;
+  height: 36px;
+  padding: 5px;
 }
