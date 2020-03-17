@@ -30,16 +30,26 @@ section#projects ul {
   padding: 0;
 }
 
+section#skills .header {
+  display: inline;
+}
+
 section#skills ul {
-  display: flex;
+  display: inline;
   list-style-type: none;
   padding: 0;
 }
 
+section#skills li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
 section#skills .icon {
-  width: 52px;
-  height: 52px;
-  padding: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
 }
 
 section#contacts .header {

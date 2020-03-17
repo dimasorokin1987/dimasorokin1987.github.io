@@ -68,9 +68,3 @@ section#projects li a {
   font-size: xx-large;
   text-decoration: none;
 }
-
-section#skills li {
-  display: inline-block;
-  padding: 20px;
-  margin: 5px;
-}
