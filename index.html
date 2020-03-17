@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>Portfolio.</title>
+  <link rel="stylesheet" href="common.css" />
   <link rel="stylesheet" media="screen and (min-width: 900px)" href="wide.screensize.css" />
   <link rel="stylesheet" media="screen and (max-width: 900px) and (min-width: 600px)" href="medium.screensize.css" />
   <link rel="stylesheet" media="screen and (max-width: 600px)" href="small.screensize.css" />
@@ -14,8 +15,19 @@
 
 <body>
   <header>
-    <div class='switchers'>
-      <div class='locale switcher'>
+    <label id="nav">
+      Navigate to
+      <select>
+        <option>top</option>
+        <option>projects</option>
+        <option>skills</option>
+        <option>contacts</option>
+        <option>socials</option>
+      </select>
+    </label>
+    <div id="top"></div>
+    <div class="switchers">
+      <div class="locale switcher">
         <b>locale:</b>
         <label>
           <input type="radio" name="localeRadioButton" value="en_locale">
@@ -30,7 +42,7 @@
           <span>ua</span>
         </label>
       </div>
-      <div class='theme switcher'>
+      <div class="theme switcher">
         <b>theme:</b>
         <label>
           <input type="radio" name="themeRadioButton" value="light_theme">
@@ -43,31 +55,56 @@
       </div>
     </div>
     <div class="clear float"></div>
-    <h1 id="about"></h1>
   </header>
   <main>
-    <section class="examples">
-      <h2 id="projects_header"></h2>
-      <ul class="projects">
+    <h1 class="header"></h1>
+    <section id="projects">
+      <h2 class="header"></h2>
+      <ul>
         <li>
-          <a href="/react-dashboard/">react-dashboard</a>
+          <a href="/react-dashboard/" target="_blank">react-dashboard</a>
         </li>
         <li>
-          <a href="#">mern-url-shortener</a>
+          <a href="#" target="_blank">mern-url-shortener</a>
         </li>
       </ul>
     </section>
     <div class="clear float"></div>
+    <section id="skills">
+      <h2 class="header"></h2>
+      <ul>
+        <li>
+          <div class='js letter skill icon'>JS</div>
+        </li>
+        <li>
+          <img src='js.icon.svg' />
+        </li>
+      </ul>
+    </section>
+    <section id="contacts">
+      <h2 class="header"></h2>
+      <ul>
+        <li>
+          <div class='js letter skill icon'>JS</div>
+        </li>
+      </ul>
+    </section>
   </main>
   <footer>
-    <ul class="socials">
-      <li>
-        <a href="https://www.facebook.com/profile.php?id=100008725081649">Facebook</a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/dima-sorokin-016bbbaa/">LinkedIn</a>
-      </li>
-    </ul>
+    <section id="socials">
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=100008725081649" target="_blank">
+            <span class="facebook letter icon">f</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/dima-sorokin-016bbbaa/" target="_blank">
+            <span class="linkedin letter icon">in</span>
+          </a>
+        </li>
+      </ul>
+    </section>
   </footer>
   <script>
     const body = document.querySelector('body');
@@ -85,22 +122,28 @@
 
     const texts = {
       en_locale: {
-        about: 'Hello, I am Dima Sorokin. And this is my portfolio.',
-        projects_header: 'Some of my projects:'
+        "main .header": "Hello, I am Dima Sorokin. And this is my portfolio.",
+        "#projects .header": "Some of my projects:",
+        "#skills .header": "Skills:",
+        "#contacts .header": "Contacts:"
       },
       ru_locale: {
-        about: 'Привет, я Дима Сорокин. И это мое портфолио.',
-        projects_header: 'Некоторые из моих проектов:'
+        "main .header": "Привет, я Дима Сорокин. И это мое портфолио.",
+        "#projects .header": "Некоторые из моих проектов:",
+        "#skills .header": "Скилы:",
+        "#contacts .header": "Контакты:"
       },
       ua_locale: {
-        about: 'Привіт, я Діма Сорокін. І це моє портфоліо.',
-        projects_header: 'Деякі з моїх проектів:'
-      },
+        "main .header": "Привіт, я Діма Сорокін. І це моє портфоліо.",
+        "#projects .header": "Деякі з моїх проектів:",
+        "#skills .header": "Навички:",
+        "#contacts .header": "Зв`язок:"
+      }
     };
 
     const updateTexts = lang => {
-      Object.entries(texts[lang]).forEach(([id,text]) => {
-        document.getElementById(id).innerHTML = text;
+      Object.entries(texts[lang]).forEach(([selector,text]) => {
+        document.querySelector(selector).innerHTML = text;
       });
     };
 

@@ -3,6 +3,18 @@ body.light_theme {
   color: #000;
 }
 
+body.light_theme #nav {
+  color: black;
+  background: #ccc;
+  border-color: #555;
+}
+
+body.light_theme #nav select {
+  color: black;
+  background: #ddd;
+  border-color: #999;
+}
+
 body.light_theme .switcher {
   background: rgb(190, 200, 200);
 }
@@ -11,28 +23,38 @@ body.light_theme .switcher label {
   background: #dee0e0;
 }
 
-body.light_theme section.examples {
+body.light_theme section#projects {
   background: #bbb;
 }
 
-body.light_theme ul.projects li {
+body.light_theme section#projects li {
   background: #ccc;
   border-color: #888;
   color: #000;
 }
 
-body.light_theme ul.projects li:hover {
+body.light_theme section#projects li:hover {
   background: rgba(0, 100, 0, 0.1);
 }
 
-body.light_theme ul.projects li a {
+body.light_theme section#projects li a {
   color: #33a;
 }
 
-body.light_theme ul.socials li:hover {
-	background: rgba(0, 30, 100, 0.1);
+body.light_theme .letter.icon {
+  color: black;
 }
 
-body.light_theme ul.socials li a {
-	color: #33f;
+body.light_theme .skill.icon {
+  background-color: #ccc;
+}
+
+body.light_theme .facebook.icon {
+  background: #3D5A98;
+  color: #aaa;
+}
+
+body.light_theme .linkedin.icon {
+  background: #2867B2;
+  color: #aaa;
 }

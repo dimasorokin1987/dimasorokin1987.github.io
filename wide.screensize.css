@@ -2,6 +2,10 @@ body {
   font-size: 16px;
 }
 
+select#nav {
+  display: none;
+}
+
 .switchers {
   float: right;
 }
@@ -19,26 +23,21 @@ body {
   margin: 0 3px;
 }
 
-
-section.examples {
+section#projects {
   float: right;
   width: 40%;
 }
 
-section.examples h2 {
+section#projects h2 {
   text-align: center;
 }
 
-.clear.float {
-  clear: both;
-}
-
-ul.projects {
+section#projects ul {
   list-style-type: none;
   padding: 0;
 }
 
-ul.projects li {
+section#projects li {
   padding: 20px;
   text-align: center;
   border-width: 1px;
@@ -46,22 +45,53 @@ ul.projects li {
   margin: 5px;
 }
 
-ul.projects li a {
+section#projects li a {
   font-size: xx-large;
   text-decoration: none;
 }
 
-ul.socials {
+section#skills ul {
   list-style-type: none;
   padding: 0;
 }
 
-ul.socials li {
-  padding: 10px;
-  display: inline;
+section#skills li {
+  display: inline-block;
+  padding: 20px;
+  margin: 5px;
 }
 
-ul.socials li a {
+section#skills img {
+  width: 36px;
+  height: 36px;
+}
+
+section#contacts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section#contacts li {
+  padding: 10px;
+  display: inline-block;
+}
+
+section#socials ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section#socials li {
+  padding: 10px;
+  display: inline-block;
+  transition: transform .1s;
+}
+
+section#socials li:hover {
+  transform: scale(1.5);
+}
+
+section#socials li a {
   font-size: large;
   text-decoration: none;
 }

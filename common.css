@@ -1,0 +1,29 @@
+.clear.float {
+  clear: both;
+}
+
+.letter.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+}
+
+.facebook.letter.icon {
+  font-size: 52px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.linkedin.letter.icon {
+  font-size: 48px;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.js.letter.icon {
+  font-size: 32px;
+  font-family: sans-serif;
+}
