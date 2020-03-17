@@ -1,0 +1,12 @@
+{
+  "#nav .caption": "Navigate to",
+  "#nav option[value='#top']": "top",
+  "#nav option[value='#projects']": "projects",
+  "#nav option[value='#skills']": "skills",
+  "#nav option[value='#contacts']": "contacts",
+  "#nav option[value='#socials']": "socials",
+  "main .header": "Hello, I am Dima Sorokin. And this is my portfolio.",
+  "#projects .header": "Some of my projects:",
+  "#skills .header": "Skills:",
+  "#contacts .header": "Contacts:"
+}

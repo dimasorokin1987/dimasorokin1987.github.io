@@ -1,0 +1,12 @@
+{
+  "#nav .caption": "Перейти до",
+  "#nav option[value='#top']": "початку",
+  "#nav option[value='#projects']": "проектiв",
+  "#nav option[value='#skills']": "навичок",
+  "#nav option[value='#contacts']": "контактiв",
+  "#nav option[value='#socials']": "соцмереж",
+  "main .header": "Привіт, я Діма Сорокін. І це моє портфоліо.",
+  "#projects .header": "Деякі з моїх проектів:",
+  "#skills .header": "Навички:",
+  "#contacts .header": "Зв`язок:"
+}

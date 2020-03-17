@@ -16,7 +16,7 @@
 <body>
   <header>
     <label id="nav">
-      Navigate to
+      <span class="caption">Navigate to</span>
       <select onchange="location.href=this.value">
         <option value="#top">top</option>
         <option value="#projects">projects</option>
@@ -30,15 +30,15 @@
       <div class="locale switcher">
         <b>locale:</b>
         <label>
-          <input type="radio" name="localeRadioButton" value="en_locale">
+          <input type="radio" name="localeRadioButton" value="en">
           <span>en</span>
         </label>
         <label>
-          <input type="radio" name="localeRadioButton" value="ru_locale">
+          <input type="radio" name="localeRadioButton" value="ru">
           <span>ru</span>
         </label>
         <label>
-          <input type="radio" name="localeRadioButton" value="ua_locale">
+          <input type="radio" name="localeRadioButton" value="ua">
           <span>ua</span>
         </label>
       </div>
@@ -107,6 +107,23 @@
     </section>
   </footer>
   <script>
+    const memoize = f => {
+      const results = {};
+      return async(arg)=>{
+        if(!results[arg]){
+          results[arg] = await f(arg);
+        }
+        return results[arg];
+      };
+    };
+
+    const loadLocaleTexts = async(locale)=>{
+      const response = await fetch('texts.'+locale+'.json');
+      const texts = await response.json();
+      return texts;
+    };
+    const getLocaleTexts = memoize(loadLocaleTexts);
+
     const body = document.querySelector('body');
     const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]')
     const localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]')
@@ -120,35 +137,15 @@
       }
     };
 
-    const texts = {
-      en_locale: {
-        "main .header": "Hello, I am Dima Sorokin. And this is my portfolio.",
-        "#projects .header": "Some of my projects:",
-        "#skills .header": "Skills:",
-        "#contacts .header": "Contacts:"
-      },
-      ru_locale: {
-        "main .header": "Привет, я Дима Сорокин. И это мое портфолио.",
-        "#projects .header": "Некоторые из моих проектов:",
-        "#skills .header": "Скилы:",
-        "#contacts .header": "Контакты:"
-      },
-      ua_locale: {
-        "main .header": "Привіт, я Діма Сорокін. І це моє портфоліо.",
-        "#projects .header": "Деякі з моїх проектів:",
-        "#skills .header": "Навички:",
-        "#contacts .header": "Зв`язок:"
-      }
-    };
-
-    const updateTexts = lang => {
-      Object.entries(texts[lang]).forEach(([selector,text]) => {
+    const updateTexts = async(lang) => {
+      const texts = await getLocaleTexts(lang);
+      Object.entries(texts).forEach(([selector,text]) => {
         document.querySelector(selector).innerHTML = text;
       });
     };
 
     themeRadioButtons.forEach(themeRadioButton=>{
-      themeRadioButton.addEventListener('change', e=>{
+      themeRadioButton.addEventListener('change', e => {
         let theme = e.target.value;
         console.log(theme);
         localStorage.storedTheme = theme;
@@ -157,28 +154,27 @@
     });
 
     localeRadioButtons.forEach(btn=>{
-      btn.addEventListener('change', e=>{
+      btn.addEventListener('change', async(e) => {
         let locale = e.target.value;
         console.log(locale);
         localStorage.storedLocale = locale;
-        updateTexts(locale);
+        await updateTexts(locale);
       }, false);
     });
 
     const changeTheme = theme => {
-      themeRadioButtons.forEach(btn=>{
+      themeRadioButtons.forEach(btn => {
         if(btn.value === theme) btn.click();
       });
     };
     const changeLocale = locale => {
-      localeRadioButtons.forEach(btn=>{
+      localeRadioButtons.forEach(btn => {
         if(btn.value === locale) btn.click();
       });
     };
 
-    //applyTheme('light_theme');
     let storedTheme = localStorage.storedTheme || 'light_theme';
-    let storedLocale = localStorage.storedLocale || 'en_locale';
+    let storedLocale = localStorage.storedLocale || 'en';
    
     changeTheme(storedTheme);
     changeLocale(storedLocale);
