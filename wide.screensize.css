@@ -40,19 +40,6 @@ section#projects li {
   margin: 5px;
 }
 
-section#projects li a {
-  font-size: xx-large;
-  text-decoration: none;
-}
-
-section#contacts li {
-  transition: transform .1s;
-}
-
-section#contacts li:hover {
-  transform: scale(1.5);
-}
-
 section#socials li {
   transition: transform .1s;
 }

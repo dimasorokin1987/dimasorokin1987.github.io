@@ -21,8 +21,8 @@ footer {
   border-width: 1px;
   background: grey;
   font-size: 21px;
-  left: 15%;
-  width: 70%;
+  left: 10%;
+  width: 80%;
 }
 
 #nav select {
@@ -64,7 +64,12 @@ section#projects li {
   margin: 5px;
 }
 
-section#projects li a {
-  font-size: xx-large;
-  text-decoration: none;
+section#skills .header {
+  display: block;
+  text-align: center;
+}
+
+section#contacts .header {
+  display: block;
+  text-align: center;
 }

@@ -41,6 +41,14 @@ body.dark_theme section#projects li a {
   color: #ffc;
 }
 
+body.dark_theme section#contacts li:hover {
+  background: #999;
+}
+
+body.dark_theme section#contacts .text {
+  color: white;
+}
+
 body.dark_theme .letter.icon {
   color: white;
 }

@@ -30,6 +30,11 @@ section#projects ul {
   padding: 0;
 }
 
+section#projects li a {
+  font-size: xx-large;
+  text-decoration: none;
+}
+
 section#skills .header {
   display: inline;
 }
