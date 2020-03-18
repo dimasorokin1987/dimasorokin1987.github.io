@@ -40,6 +40,29 @@ section#projects li {
   margin: 5px;
 }
 
+section#skills {
+  display: flex;
+}
+
+section#skills ul {
+  padding: 0 5px
+}
+
+section#contacts {
+  display: flex;
+}
+
+section#contacts li {
+  display: inline-block;
+  padding: 2px 5px;
+}
+
+section#contacts .icon {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+}
+
 section#socials li {
   transition: transform .1s;
 }

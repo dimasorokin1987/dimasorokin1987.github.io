@@ -52,9 +52,15 @@ footer {
   padding: 5px 10px;
 }
 
-section#projects {
-  display: inline-block;
+section {
+  display: block;
+  margin: 15px 0;
+  padding: 10px 0;
   width: 100%;
+}
+
+section#projects .header {
+  margin: 0;
 }
 
 section#projects li {
@@ -67,6 +73,21 @@ section#projects li {
 section#skills .header {
   display: block;
   text-align: center;
+  margin: 10px;
+}
+
+section#contacts .header {
+  margin: 0;
+}
+
+section#contacts li {
+  display: inline-block;
+}
+
+section#contacts .icon {
+  width: 32px;
+  height: 32px;
+  padding: 5px;
 }
 
 section#contacts .header {

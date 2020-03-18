@@ -1,11 +1,14 @@
 {
   "#nav .caption": "Navigate to",
   "#nav option[value='#top']": "top",
+  "#nav option[value='#about']": "about",
   "#nav option[value='#projects']": "projects",
   "#nav option[value='#skills']": "skills",
   "#nav option[value='#contacts']": "contacts",
   "#nav option[value='#socials']": "socials",
   "main .header": "Hello, I am Dima Sorokin. And this is my portfolio.",
+  "#about .header": "About me:",
+  "#about .content": "I am full stack developer. Currently using react stack.",
   "#projects .header": "Some of my projects:",
   "#skills .header": "Skills:",
   "#contacts .header": "Contacts:"
