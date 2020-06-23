@@ -68,17 +68,21 @@
       <div class="main-container">
         <button class="prevButton">&lt;</button>
         <div class="slides">
-          <figure style="width: 100%;">
+          <figure>
             <img src="weather_pwa1.screenshot.png">
-            <figcaption>Weather pwa</figcaption>
+            <figcaption class="weather-pwa-project-text"></figcaption>
           </figure>
-          <figure style="width: 100%;">
+          <figure>
             <img src="weather_pwa2.screenshot.png">
-            <figcaption>Weather pwa</figcaption>
+            <figcaption class="weather-pwa-project-text"></figcaption>
           </figure>
-          <figure style="width: 100%;">
+          <figure>
+            <img src="react-dashboard1.screenshot.png">
+            <figcaption class="react-dashboard-project-text"></figcaption>
+          </figure>
+          <figure>
             <img src="urlshortener1.screenshot.png">
-            <figcaption>Url shortener</figcaption>
+            <figcaption class="url-shortener-project-text"></figcaption>
           </figure>
         </div>
         <button class="nextButton">&gt;</button>
@@ -89,13 +93,13 @@
       <h2 class="header"></h2>
       <ul>
         <li>
-          <a href="https://pedantic-davinci-d8e40a.netlify.app/" target="_blank">Weather React PWA</a>
+          <a href="https://pedantic-davinci-d8e40a.netlify.app/" target="_blank" class="weather-pwa-project-text"></a>
         </li>
         <li>
-          <a href="/react-dashboard/" target="_blank">react-dashboard</a>
+          <a href="/react-dashboard/" target="_blank" class="react-dashboard-project-text"></a>
         </li>
         <li>
-          <a href="https://dimasorokin1987.github.io/urlshortener/" target="_blank">Url Shortener</a>
+          <a href="https://dimasorokin1987.github.io/urlshortener/" target="_blank" class="url-shortener-project-text"></a>
         </li>
       </ul>
     </section>
@@ -189,7 +193,9 @@
     const updateTexts = async(lang) => {
       const texts = await getLocaleTexts(lang);
       Object.entries(texts).forEach(([selector,text]) => {
-        document.querySelector(selector).innerHTML = text;
+        document.querySelectorAll(selector).forEach(el=>{
+          el.innerHTML = text;
+        });
       });
     };
 

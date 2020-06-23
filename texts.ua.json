@@ -10,6 +10,9 @@
   "#about .header": "Про мене:",
   "#about .content": "Я фулл стак веб девелопер. Зараз використовую стек реакта.",
   "#projects .header": "Деякі з моїх проектів:",
+  ".weather-pwa-project-text": "Погодний реакт застосунок",
+  ".react-dashboard-project-text": "Реакт дашбоард",
+  ".url-shortener-project-text": "Скорочувач посилань",
   "#skills .header": "Навички:",
   "#contacts .header": "Зв`язок:"
 }

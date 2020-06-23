@@ -10,6 +10,9 @@
   "#about .header": "About me:",
   "#about .content": "I am full stack developer. Currently using react stack.",
   "#projects .header": "Some of my projects:",
+  ".weather-pwa-project-text": "Weather react PWA",
+  ".react-dashboard-project-text": "React dashboard",
+  ".url-shortener-project-text": "Url shortener",
   "#skills .header": "Skills:",
   "#contacts .header": "Contacts:"
 }
