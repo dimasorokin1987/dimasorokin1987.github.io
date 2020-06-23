@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>Portfolio.</title>
+  <link rel="stylesheet" type="text/css" href="https://dimasorokin1987.github.io/sliding-carousel/sliding-carousel.css" />
   <link rel="stylesheet" href="common.css" />
   <link rel="stylesheet" media="screen and (min-width: 900px)" href="wide.screensize.css" />
   <link rel="stylesheet" media="screen and (max-width: 900px) and (min-width: 600px)" href="medium.screensize.css" />
@@ -62,6 +63,27 @@
     <section id="about">
       <h2 class="header"></h2>
       <p class="content"></p>
+    </section>
+    <section class="sliding-carousel" id="projects-carousel">
+      <div class="main-container">
+        <button class="prevButton">&lt;</button>
+        <div class="slides">
+          <figure style="width: 100%;">
+            <img src="weather_pwa1.screenshot.png">
+            <figcaption>Weather pwa</figcaption>
+          </figure>
+          <figure style="width: 100%;">
+            <img src="weather_pwa2.screenshot.png">
+            <figcaption>Weather pwa</figcaption>
+          </figure>
+          <figure style="width: 100%;">
+            <img src="urlshortener1.screenshot.png">
+            <figcaption>Url shortener</figcaption>
+          </figure>
+        </div>
+        <button class="nextButton">&gt;</button>
+      </div>
+      <div class="radios"><input type="radio" name="position"><input type="radio" name="position"><input type="radio" name="position"><input type="radio" name="position"><input type="radio" name="position"></div>
     </section>
     <section id="projects">
       <h2 class="header"></h2>
@@ -130,7 +152,10 @@
       </ul>
     </section>
   </footer>
-  <script>
+  <script type='module'>
+    import { applyLoopedSlidingCarousel } from 'https://dimasorokin1987.github.io/sliding-carousel/looped-sliding-carousel.mjs';
+    applyLoopedSlidingCarousel('#projects-carousel.sliding-carousel');
+
     const memoize = f => {
       const results = {};
       return async(arg)=>{

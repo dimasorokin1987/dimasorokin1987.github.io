@@ -23,6 +23,12 @@ body {
   margin: 0 3px;
 }
 
+section#projects-carousel {
+  float: left;
+  width: 50%;
+  height: 350px;
+}
+
 section#projects {
 	float: right;
 	width: 50%;
