@@ -29,6 +29,8 @@ section#projects-carousel figcaption {
   top: auto;
   bottom: 0;
   color: #f50;
+  white-space: break-spaces;
+  text-align: center;
 }
 
 section#projects ul {
