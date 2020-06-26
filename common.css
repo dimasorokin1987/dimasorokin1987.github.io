@@ -25,9 +25,9 @@
   font-family: sans-serif;
 }
 
-section#projects-carousel figure {
+/* section#projects-carousel figure {
   display: table;
-}
+} */
 
 section#projects-carousel figcaption {
   top: auto;
