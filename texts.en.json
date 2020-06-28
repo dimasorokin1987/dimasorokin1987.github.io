@@ -13,6 +13,7 @@
   ".weather-pwa-project-text": "Weather react PWA",
   ".react-dashboard-project-text": "React dashboard",
   ".url-shortener-project-text": "Url shortener",
+  ".react-chat-project-text": "React chat",
   "#skills .header": "Skills:",
   "#contacts .header": "Contacts:"
 }

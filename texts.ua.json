@@ -13,6 +13,7 @@
   ".weather-pwa-project-text": "Погодний реакт застосунок",
   ".react-dashboard-project-text": "Реакт дашбоард",
   ".url-shortener-project-text": "Скорочувач посилань",
+  ".react-chat-project-text": "Реакт чат",
   "#skills .header": "Навички:",
   "#contacts .header": "Зв`язок:"
 }
