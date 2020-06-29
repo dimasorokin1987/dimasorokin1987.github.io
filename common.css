@@ -110,3 +110,8 @@ section#socials .icon {
   height: 36px;
   padding: 5px;
 }
+
+section#online-chat-container .online-chat.icon {
+  width: 100px;
+  height: 100px;
+}
