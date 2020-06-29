@@ -196,19 +196,21 @@
     };
     const getLocaleTexts = memoize(loadLocaleTexts);
 
-    const body = document.querySelector('body');
-    const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]');
-    const localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]');
-    const toggleChatButton = document.querySelector('#toggle-chat');
-    const chatElement = document.querySelector('#chat');
+    const $body = document.querySelector('body');
+    const $themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]');
+    const $localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]');
+    const $toggleChatButton = document.querySelector('#toggle-chat');
+    const $chat = document.querySelector('#chat');
+    const $message = document.querySelector('#message');
+    const $sendMessageButton = document.querySelector('#chat button');
     
 
     const applyTheme = theme => {
-      let currentTheme = [...body.classList].find(cl=>cl.endsWith('_theme'));
+      let currentTheme = [...$body.classList].find(cl=>cl.endsWith('_theme'));
       if(currentTheme){
-        body.classList.replace(currentTheme, theme);
+        $body.classList.replace(currentTheme, theme);
       }else{
-        body.classList.add(theme);
+        $body.classList.add(theme);
       }
     };
 
@@ -221,8 +223,8 @@
       });
     };
 
-    themeRadioButtons.forEach(themeRadioButton=>{
-      themeRadioButton.addEventListener('change', e => {
+    $themeRadioButtons.forEach($themeRadioButton=>{
+      $themeRadioButton.addEventListener('change', e => {
         let theme = e.target.value;
         console.log(theme);
         localStorage.storedTheme = theme;
@@ -230,8 +232,8 @@
       }, false);
     });
 
-    localeRadioButtons.forEach(btn=>{
-      btn.addEventListener('change', async(e) => {
+    $localeRadioButtons.forEach($btn=>{
+      $btn.addEventListener('change', async(e) => {
         let locale = e.target.value;
         console.log(locale);
         localStorage.storedLocale = locale;
@@ -240,18 +242,25 @@
     });
 
 
-    toggleChatButton.onclick = e=>{
+    $toggleChatButton.onclick = e=>{
       e.preventDefault();
-      chatElement.style.display = chatElement.style.display==='none'? 'block': 'none';
-    }
+      $chat.style.display = $chat.style.display==='none'? 'block': 'none';
+    };
+
+    $sendMessageButton.onclick = async()=>{
+      let msg = $message.value;
+      let r = await fetch(`https://slack.com/api/chat.postMessage?token=xoxb-1002921805558-1204427402230-DsGlsdePNcpmgzo0BFwe3LGN&channel=%23general&text=${msg}&pretty=1`)
+      let txt = await r.text()
+      alert(txt);
+    };
 
     const changeTheme = theme => {
-      themeRadioButtons.forEach(btn => {
+      $themeRadioButtons.forEach(btn => {
         if(btn.value === theme) btn.click();
       });
     };
     const changeLocale = locale => {
-      localeRadioButtons.forEach(btn => {
+      $localeRadioButtons.forEach(btn => {
         if(btn.value === locale) btn.click();
       });
     };
