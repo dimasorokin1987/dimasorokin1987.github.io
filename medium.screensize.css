@@ -81,4 +81,17 @@ section#online-chat-container {
   position: fixed;
   right: 0;
   bottom: 0;
+  margin: 5px;
+}
+
+section#online-chat-container #chat #message {
+  min-width: 400px;
+  min-height: 80px;
+}
+
+section#online-chat-container #chat button {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  padding: 10px;
 }

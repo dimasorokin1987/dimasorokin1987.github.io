@@ -167,7 +167,11 @@
       </ul>
     </section>
     <section id="online-chat-container">
-      <img class="online-chat icon" src="online-chat.icon.svg" />
+      <a id="toggle-chat" href="#"><img class="online-chat icon" src="online-chat.icon.svg" /></a>
+      <div id="chat">
+        <textarea id="message" placeholder="Enter your message..."></textarea>
+        <button>OK</button>
+      </div>
     </section>
   </footer>
 
@@ -193,8 +197,11 @@
     const getLocaleTexts = memoize(loadLocaleTexts);
 
     const body = document.querySelector('body');
-    const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]')
-    const localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]')
+    const themeRadioButtons = document.querySelectorAll('input[name=themeRadioButton]');
+    const localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]');
+    const toggleChatButton = document.querySelector('#toggle-chat');
+    const chatElement = document.querySelector('#chat');
+    
 
     const applyTheme = theme => {
       let currentTheme = [...body.classList].find(cl=>cl.endsWith('_theme'));
@@ -231,6 +238,12 @@
         await updateTexts(locale);
       }, false);
     });
+
+
+    toggleChatButton.onclick = e=>{
+      e.preventDefault();
+      chatElement.style.display = chatElement.style.display==='none'? 'block': 'none';
+    }
 
     const changeTheme = theme => {
       themeRadioButtons.forEach(btn => {

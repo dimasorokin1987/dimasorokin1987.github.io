@@ -111,6 +111,10 @@ section#socials .icon {
   padding: 5px;
 }
 
+section#online-chat-container {
+  z-index: 2;
+}
+
 section#online-chat-container .online-chat.icon {
   width: 100px;
   height: 100px;
