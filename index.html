@@ -252,7 +252,8 @@
       let url = `https://send-slack-message.herokuapp.com/?txt=${msg}`;
       let r = await fetch(url);
       let txt = await r.text();
-      alert(txt);
+      console.log(txt);
+      $message.value = '';
     };
 
     const changeTheme = theme => {
