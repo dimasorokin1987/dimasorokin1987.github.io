@@ -249,8 +249,9 @@
 
     $sendMessageButton.onclick = async()=>{
       let msg = $message.value;
-      let r = await fetch(`https://slack.com/api/chat.postMessage?token=xoxb-1002921805558-1204427402230-DsGlsdePNcpmgzo0BFwe3LGN&channel=%23general&text=${msg}&pretty=1`)
-      let txt = await r.text()
+      let url = `https://send-slack-message.herokuapp.com/?txt=${msg}`;
+      let r = await fetch(url);
+      let txt = await r.text();
       alert(txt);
     };
 
