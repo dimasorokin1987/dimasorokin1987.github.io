@@ -123,12 +123,16 @@ section#online-chat-container .online-chat.icon {
 section#online-chat-container #messages {
   width: 100%;
 }
+section#online-chat-container #messages .message-container {
+  position: relative;
+  width: 100%;
+}
 
 section#online-chat-container #messages .own {
-  display: block;
-  float: right;
+  position: absolute;
+  right: 0;
 }
 section#online-chat-container #messages .reply {
-  display: block;
-  float: left;
+  pisition: absolute;
+  left: 0;
 }
