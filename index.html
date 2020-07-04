@@ -265,6 +265,9 @@
         $msg.classList.add('own');
         $msg.innerText = txt;
         $messages.appendChild($msg);
+        let $clear = document.createElement('div');
+        $clear.classList.add('clear');
+        $messages.appendChild($clear);
         $message.value = '';
       };
     };
@@ -283,6 +286,9 @@
       $msg.classList.add('reply');
       $msg.innerText = txt;
       $messages.appendChild($msg);
+      let $clear = document.createElement('div');
+      $clear.classList.add('clear');
+      $messages.appendChild($clear);
     };
 /*
     $sendMessageButton.onclick = async()=>{
