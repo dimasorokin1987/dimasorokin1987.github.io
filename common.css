@@ -124,12 +124,15 @@ section#online-chat-container #messages {
   width: 100%;
 }
 section#online-chat-container #messages .message-container {
+  display: block;
   width: 100%;
 }
 
 section#online-chat-container #messages .own {
+  display: block;
   float: right;
 }
 section#online-chat-container #messages .reply {
+  display: block;
   float: left;
 }
