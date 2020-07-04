@@ -108,6 +108,10 @@ section#online-chat-container {
   margin: 5px;
 }
 
+section#online-chat-container #chat {
+  position: relative;
+}
+
 section#online-chat-container #chat #message {
   min-width: 95%;
   min-height: 80px;
@@ -116,6 +120,6 @@ section#online-chat-container #chat #message {
 section#online-chat-container #chat button {
   position: absolute;
   right: 10px;
-  top: 50px;
+  top: -50px;
   padding: 10px;
 }
