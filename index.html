@@ -264,6 +264,8 @@
 
         let $msgContainer = document.createElement('div');
         $msgContainer.classList.add = 'message-container';
+        $msgContainer.classList.add = 'float';
+        $msgContainer.classList.add = 'clear';
         let $msg = document.createElement('div');
         $msg.classList.add('own');
         $msg.innerText = txt;
@@ -285,6 +287,8 @@
       //alert(`Data received: ${e.data}`);
       let $msgContainer = document.createElement('div');
       $msgContainer.classList.add = 'message-container';
+      $msgContainer.classList.add = 'float';
+      $msgContainer.classList.add = 'clear';
       let $msg = document.createElement('div');
       $msg.classList.add('reply');
       $msg.innerText = txt;
