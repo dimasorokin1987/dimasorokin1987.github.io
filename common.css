@@ -126,6 +126,7 @@ section#online-chat-container #messages {
 section#online-chat-container #messages .message-container {
   position: relative;
   width: 100%;
+  height: 50px;
 }
 
 section#online-chat-container #messages .own {
