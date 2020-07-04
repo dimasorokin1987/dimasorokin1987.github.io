@@ -175,9 +175,11 @@
     </section>
   </footer>
 
-  <script type='module'>
+  <script type="module">
     import { applyLoopedSlidingCarousel } from 'https://dimasorokin1987.github.io/sliding-carousel/looped-sliding-carousel.mjs';
     applyLoopedSlidingCarousel('#projects-carousel.sliding-carousel');
+
+    const socketChatUrl = 'wss://echo-websocket-server.herokuapp.com/ws';
 
     const memoize = f => {
       const results = {};
@@ -247,16 +249,12 @@
       $chat.style.display = $chat.style.display==='none'? 'block': 'none';
     };
 
-
-    let url = `wss://echo-websocket-server.herokuapp.com/ws`
-    alert(url)
-    let socket = new WebSocket(url)
-    socket.onerror = function(error) {
-      alert("Socket error: " + error.message);
-    }
-
-    socket.onopen = function() {
-      alert("Connected.");
+    const socket = new WebSocket(socketChatUrl)
+    socket.onerror = err=>{
+      alert(`Socket error: ${err.message}`);
+    };
+    socket.onopen = ()=>{
+      alert(`Connected to ${socketChatUrl}`);
 
       $sendMessageButton.onclick = async()=>{
         let msg = $message.value;
@@ -264,18 +262,16 @@
         $message.value = '';
       };
     };
-
-    socket.onclose = function(event) {
-      if (event.wasClean) {
-        alert("Connection close clean");
+    socket.onclose = e=>{
+      if (e.wasClean) {
+        alert('Connection close clean');
       } else {
         alert('Connection aborted'); // например, "убит" процесс сервера
       }
-      alert('Code: ' + event.code + ' reason: ' + event.reason);
+      alert(`Code: ${e.code}, reason: ${e.reason}`);
     };
-
-    socket.onmessage = function(event) {
-      alert("Data received: " + event.data);
+    socket.onmessage = e=>{
+      alert(`Data received: ${e.data}`);
     };
 /*
     $sendMessageButton.onclick = async()=>{
