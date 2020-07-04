@@ -277,7 +277,8 @@
       alert(`Code: ${e.code}, reason: ${e.reason}`);
     };
     socket.onmessage = e=>{
-      alert(`Data received: ${e.data}`);
+      let txt = e.data;
+      //alert(`Data received: ${e.data}`);
       let $msg = document.createElement('div');
       $msg.classList.add('reply');
       $msg.innerText = txt;
