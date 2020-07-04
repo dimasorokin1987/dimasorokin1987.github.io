@@ -119,3 +119,14 @@ section#online-chat-container .online-chat.icon {
   width: 100px;
   height: 100px;
 }
+
+section#online-chat-container #messages {
+  width: 100%;
+}
+
+section#online-chat-container #messages .own {
+  float: right;
+}
+section#online-chat-container #messages .reply {
+  float: left;
+}
