@@ -261,13 +261,14 @@
       $sendMessageButton.onclick = async()=>{
         let txt = $message.value;
         socket.send(txt);
+
+        let $msgContainer = document.createElement('div');
+        $msgContainer.classList.add = 'message-container';
         let $msg = document.createElement('div');
         $msg.classList.add('own');
         $msg.innerText = txt;
-        $messages.appendChild($msg);
-        let $clear = document.createElement('div');
-        $clear.class='float clear';
-        $messages.appendChild($clear);
+        $msgContainer.appendChild($msg);
+        $messages.appendChild($msgContainer);
         $message.value = '';
       };
     };
@@ -282,13 +283,14 @@
     socket.onmessage = e=>{
       let txt = e.data;
       //alert(`Data received: ${e.data}`);
-      let $msg = document.createElement('div');
-      $msg.classList.add('reply');
-      $msg.innerText = txt;
-      $messages.appendChild($msg);
-      let $clear = document.createElement('div');
-      $clear.class = 'float clear';
-      $messages.appendChild($clear);
+      let $msgContainer = document.createElement('div');
+        $msgContainer.classList.add = 'message-container';
+        let $msg = document.createElement('div');
+        $msg.classList.add('reply');
+        $msg.innerText = txt;
+        $msgContainer.appendChild($msg);
+        $messages.appendChild($msgContainer);
+        
     };
 /*
     $sendMessageButton.onclick = async()=>{
