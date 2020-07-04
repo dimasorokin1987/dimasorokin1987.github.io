@@ -284,13 +284,12 @@
       let txt = e.data;
       //alert(`Data received: ${e.data}`);
       let $msgContainer = document.createElement('div');
-        $msgContainer.classList.add = 'message-container';
-        let $msg = document.createElement('div');
-        $msg.classList.add('reply');
-        $msg.innerText = txt;
-        $msgContainer.appendChild($msg);
-        $messages.appendChild($msgContainer);
-        
+      $msgContainer.classList.add = 'message-container';
+      let $msg = document.createElement('div');
+      $msg.classList.add('reply');
+      $msg.innerText = txt;
+      $msgContainer.appendChild($msg);
+      $messages.appendChild($msgContainer);
     };
 /*
     $sendMessageButton.onclick = async()=>{
