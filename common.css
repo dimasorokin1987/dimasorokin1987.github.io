@@ -133,6 +133,6 @@ section#online-chat-container #messages .own {
   right: 0;
 }
 section#online-chat-container #messages .reply {
-  pisition: absolute;
+  position: absolute;
   left: 0;
 }
