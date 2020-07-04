@@ -169,6 +169,7 @@
     <section id="online-chat-container">
       <a id="toggle-chat" href="#"><img class="online-chat icon" src="online-chat.icon.svg" /></a>
       <div id="chat">
+        <div id="messages"></div>
         <textarea id="message" placeholder="Enter your message..."></textarea>
         <button>OK</button>
       </div>
@@ -203,6 +204,7 @@
     const $localeRadioButtons = document.querySelectorAll('input[name=localeRadioButton]');
     const $toggleChatButton = document.querySelector('#toggle-chat');
     const $chat = document.querySelector('#chat');
+    const $messages = document.querySelector('#messages');
     const $message = document.querySelector('#message');
     const $sendMessageButton = document.querySelector('#chat button');
     
@@ -257,8 +259,11 @@
       alert(`Connected to ${socketChatUrl}`);
 
       $sendMessageButton.onclick = async()=>{
-        let msg = $message.value;
-        socket.send(msg);
+        let txt = $message.value;
+        socket.send(txt);
+        let $msg = document.createElement('div');
+        $msg.innerText = txt;
+        $messages.appendChild($msg);
         $message.value = '';
       };
     };
@@ -272,6 +277,9 @@
     };
     socket.onmessage = e=>{
       alert(`Data received: ${e.data}`);
+      let $msg = document.createElement('div');
+      $msg.innerText = txt;
+      $messages.appendChild($msg);
     };
 /*
     $sendMessageButton.onclick = async()=>{
