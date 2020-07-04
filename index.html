@@ -247,6 +247,37 @@
       $chat.style.display = $chat.style.display==='none'? 'block': 'none';
     };
 
+
+    let url = `wss://echo-websocket-server.herokuapp.com/ws`
+    alert(url)
+    let socket = new WebSocket(url)
+    socket.onerror = function(error) {
+      alert("Socket error: " + error.message);
+    }
+
+    socket.onopen = function() {
+      alert("Connected.");
+
+      $sendMessageButton.onclick = async()=>{
+        let msg = $message.value;
+        socket.send(msg);
+        $message.value = '';
+      };
+    };
+
+    socket.onclose = function(event) {
+      if (event.wasClean) {
+        alert("Connection close clean");
+      } else {
+        alert('Connection aborted'); // например, "убит" процесс сервера
+      }
+      alert('Code: ' + event.code + ' reason: ' + event.reason);
+    };
+
+    socket.onmessage = function(event) {
+      alert("Data received: " + event.data);
+    };
+/*
     $sendMessageButton.onclick = async()=>{
       let msg = $message.value;
       let url = `https://send-slack-message.herokuapp.com/?txt=${msg}`;
@@ -255,7 +286,7 @@
       console.log(txt);
       $message.value = '';
     };
-
+*/
     const changeTheme = theme => {
       $themeRadioButtons.forEach(btn => {
         if(btn.value === theme) btn.click();
