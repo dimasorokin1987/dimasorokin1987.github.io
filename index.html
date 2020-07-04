@@ -167,9 +167,9 @@
       </ul>
     </section>
     <section id="online-chat-container">
+      <div id="messages"></div>
       <a id="toggle-chat" href="#"><img class="online-chat icon" src="online-chat.icon.svg" /></a>
       <div id="chat">
-        <div id="messages"></div>
         <textarea id="message" placeholder="Enter your message..."></textarea>
         <button>OK</button>
       </div>
@@ -262,6 +262,7 @@
         let txt = $message.value;
         socket.send(txt);
         let $msg = document.createElement('div');
+        $msg.classList.add('own');
         $msg.innerText = txt;
         $messages.appendChild($msg);
         $message.value = '';
@@ -278,6 +279,7 @@
     socket.onmessage = e=>{
       alert(`Data received: ${e.data}`);
       let $msg = document.createElement('div');
+      $msg.classList.add('reply');
       $msg.innerText = txt;
       $messages.appendChild($msg);
     };
