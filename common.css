@@ -127,9 +127,13 @@ section#online-chat-container #messages {
 
 section#online-chat-container #messages .own {
   float: right;
-  background: rgba(0,0,0,0.5);
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(0,100,0,0.5);
 }
 section#online-chat-container #messages .reply {
   float: left;
-  background: rgba(0,100,0,0.5);
+  padding: 5px;
+  border-radius: 5px;
+  background: rgba(0,0,100,0.5);
 }
