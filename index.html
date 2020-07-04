@@ -261,16 +261,12 @@
       $sendMessageButton.onclick = async()=>{
         let txt = $message.value;
         socket.send(txt);
-
-        let $msgContainer = document.createElement('div');
-        $msgContainer.classList.add = 'message-container';
-        $msgContainer.classList.add = 'float';
-        $msgContainer.classList.add = 'clear';
-        let $msg = document.createElement('span');
+        let $msg = document.createElement('div');
         $msg.classList.add('own');
         $msg.innerText = txt;
-        $msgContainer.appendChild($msg);
-        $messages.appendChild($msgContainer);
+        $messages.appendChild($msg);
+        let $br = document.createElement('br');
+        $messages.appendChild($br);
         $message.value = '';
       };
     };
