@@ -249,6 +249,7 @@
     $toggleChatButton.onclick = e=>{
       e.preventDefault();
       $chat.style.display = $chat.style.display==='none'? 'block': 'none';
+      $messages.style.display = $messages.style.display==='none'? 'block': 'none';
     };
 
     const socket = new WebSocket(socketChatUrl)
