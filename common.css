@@ -125,8 +125,10 @@ section#online-chat-container #messages {
 }
 
 section#online-chat-container #messages .own {
+  display: block;
   float: right;
 }
 section#online-chat-container #messages .reply {
+  display: block;
   float: left;
 }
