@@ -260,11 +260,12 @@
       alert(`Connected to ${socketChatUrl}`);
 
       $sendMessageButton.onclick = async()=>{
-        let txt = $message.value;
-        socket.send(txt);
+        let text = $message.value;
+        let str = JSON.stringify({text});
+        socket.send(str);
         let $msg = document.createElement('div');
         $msg.classList.add('own');
-        $msg.innerText = txt;
+        $msg.innerText = text;
         $messages.appendChild($msg);
         let $br = document.createElement('br');
         $messages.appendChild($br);
@@ -281,7 +282,8 @@
       alert(`Code: ${e.code}, reason: ${e.reason}`);
     };
     socket.onmessage = e=>{
-      let txt = e.data;
+      let obj = JSON.parse(e.data);
+      let txt = obj.text;
       //alert(`Data received: ${e.data}`);
       let $msg = document.createElement('div');
       $msg.classList.add('reply');
