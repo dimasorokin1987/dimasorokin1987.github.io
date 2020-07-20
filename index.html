@@ -254,11 +254,10 @@
 
     const socket = new WebSocket(socketChatUrl)
     socket.onerror = err=>{
-      alert(`Socket error: ${err.message}`);
+      console.log(`Socket error: ${err.message}`);
     };
     socket.onopen = ()=>{
-      alert(`Connected to ${socketChatUrl}`);
-
+      console.log(`Connected to ${socketChatUrl}`);
       $sendMessageButton.onclick = async()=>{
         let text = $message.value;
         let str = JSON.stringify({text});
@@ -275,11 +274,11 @@
     };
     socket.onclose = e=>{
       if (e.wasClean) {
-        alert('Connection close clean');
+        console.log('Connection close clean');
       } else {
-        alert('Connection aborted'); // например, "убит" процесс сервера
+        console.log('Connection aborted'); // например, "убит" процесс сервера
       }
-      alert(`Code: ${e.code}, reason: ${e.reason}`);
+      console.log(`Code: ${e.code}, reason: ${e.reason}`);
     };
     socket.onmessage = e=>{
       let obj = JSON.parse(e.data);
