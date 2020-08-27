@@ -38,6 +38,11 @@ section#projects h2 {
   text-align: center;
 }
 
+section#projects ul {
+  height: 300px;
+  overflow: scroll;
+}
+
 section#projects li {
 	padding: 20px;
 	text-align: center;
