@@ -67,10 +67,10 @@ body.light_theme .linkedin.icon {
   color: #aaa;
 }
 
-section#online-chat-container {
+body.light_theme section#online-chat-container {
   background: rgba(150,200,100,0.5);
 }
-section#online-chat-container #chat #message {
+body.light_theme section#online-chat-container #chat #message {
   background: rgba(200,250,250,0.5);
   color: #000;
 }
