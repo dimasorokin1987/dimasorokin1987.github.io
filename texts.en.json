@@ -15,6 +15,7 @@
   ".url-shortener-project-text": "Url shortener",
   ".react-chat-project-text": "React chat",
   ".serverless-guestbook-text": "Serverless guestbook",
+  ".news-react-app-text": "News react app",
   "#skills .header": "Skills:",
   "#contacts .header": "Contacts:"
 }

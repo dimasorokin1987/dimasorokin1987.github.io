@@ -15,6 +15,7 @@
   ".url-shortener-project-text": "Скорочувач посилань",
   ".react-chat-project-text": "Реакт чат",
   ".serverless-guestbook-text": "Серверлесс гостьова",
+  ".news-react-app-text": "Реакт застросунок для новин",
   "#skills .header": "Навички:",
   "#contacts .header": "Зв`язок:"
 }
