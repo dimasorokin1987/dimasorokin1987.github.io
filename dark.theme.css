@@ -64,3 +64,11 @@ body.dark_theme .facebook.icon {
 body.dark_theme .linkedin.icon {
   color: #2867B2;
 }
+
+section#online-chat-container {
+  background: rgba(70,100,70,0.5);
+}
+section#online-chat-container #chat #message {
+  background: rgba(30,50,50,0.5);
+  color: #fff;
+}
